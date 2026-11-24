@@ -5,6 +5,7 @@
   "description": "Hollow Knight IPA patched with hollowknight:// URL scheme for launching from Main Menu app launcher",
   "tintColor": "#E8A838",
   "website": "https://github.com/Elderflowa/HollowPatch",
+  "iconURL": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4f909e2c-8c5b-437c-b13c-0118300021ed/dh58r5x-0797344d-c721-4a84-a481-8c57f7029bdc.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi80ZjkwOWUyYy04YzViLTQzN2MtYjEzYy0wMTE4MzAwMDIxZWQvZGg1OHI1eC0wNzk3MzQ0ZC1jNzIxLTRhODQtYTQ4MS04YzU3ZjcwMjliZGMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.1jym6InfsFOiJtuW01MtUVxjDr3IFy-vbJ8bp48EuxU",
   "apps": [
     {
       "name": "Hollow Knight",
@@ -12,6 +13,7 @@
       "developerName": "Elderflowa",
       "subtitle": "Patched with hollowknight:// URL scheme",
       "localizedDescription": "Hollow Knight with custom URL scheme for Main Menu launcher integration",
+      "iconURL": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4f909e2c-8c5b-437c-b13c-0118300021ed/dh58r5x-0797344d-c721-4a84-a481-8c57f7029bdc.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi80ZjkwOWUyYy04YzViLTQzN2MtYjEzYy0wMTE4MzAwMDIxZWQvZGg1OHI1eC0wNzk3MzQ0ZC1jNzIxLTRhODQtYTQ4MS04YzU3ZjcwMjliZGMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.1jym6InfsFOiJtuW01MtUVxjDr3IFy-vbJ8bp48EuxU",
       "tintColor": "#E8A838",
       "category": "games",
       "versions": [
