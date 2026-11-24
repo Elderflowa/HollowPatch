@@ -1,0 +1,82 @@
+name: Update IPA Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version (e.g. 1.5.78)'
+        required: true
+      notes:
+        description: 'Release notes'
+        required: false
+
+jobs:
+  build:
+    runs-on: macos-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.event.inputs.version }}
+          name: Hollow Knight v${{ github.event.inputs.version }}
+          body: |
+            ${{ github.event.inputs.notes }}
+
+            **Install via AltStore:** Add source `https://raw.githubusercontent.com/Elderflowa/HollowPatch/main/source.json`
+          files: HollowKnight.ipa
+          draft: false
+          prerelease: false
+
+      - name: Update source.json with new version
+        run: |
+          # This workflow assumes you manually upload the IPA to the release first
+          # Then run this workflow to update source.json
+          SIZE=$(gh release view v${{ github.event.inputs.version }} --json assets --jq '.assets[] | select(.name=="HollowKnight.ipa") | .size')
+          DATE=$(date +%Y-%m-%d)
+
+          cat > source.json << EOF
+          {
+            "name": "HollowPatch",
+            "identifier": "dev.elder.hollowpatch",
+            "subtitle": "Hollow Knight with URL scheme for Main Menu",
+            "description": "Hollow Knight IPA patched with hollowknight:// URL scheme for launching from Main Menu app launcher",
+            "iconURL": "https://raw.githubusercontent.com/Elderflowa/HollowPatch/main/icon.png",
+            "tintColor": "#E8A838",
+            "website": "https://github.com/Elderflowa/HollowPatch",
+            "apps": [
+              {
+                "name": "Hollow Knight",
+                "bundleIdentifier": "dev.elder.hollowknight",
+                "developerName": "Elderflowa",
+                "subtitle": "Patched with hollowknight:// URL scheme",
+                "localizedDescription": "Hollow Knight with custom URL scheme for Main Menu launcher integration",
+                "iconURL": "https://raw.githubusercontent.com/Elderflowa/HollowPatch/main/icon.png",
+                "tintColor": "#E8A838",
+                "category": "games",
+                "versions": [
+                  {
+                    "version": "${{ github.event.inputs.version }}",
+                    "date": "$DATE",
+                    "localizedDescription": "Added hollowknight:// URL scheme for Main Menu launcher",
+                    "downloadURL": "https://github.com/Elderflowa/HollowPatch/releases/download/v${{ github.event.inputs.version }}/HollowKnight.ipa",
+                    "size": $SIZE,
+                    "minOSVersion": "13.0",
+                    "maxOSVersion": "18.0"
+                  }
+                ]
+              }
+            ]
+          }
+          EOF
+
+      - name: Commit updated source.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add source.json
+          git commit -m "Update source.json for v${{ github.event.inputs.version }}"
+          git push

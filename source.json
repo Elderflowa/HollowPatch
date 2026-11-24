@@ -1,0 +1,32 @@
+{
+  "name": "HollowPatch",
+  "identifier": "dev.elder.hollowpatch",
+  "subtitle": "Hollow Knight with URL scheme for Main Menu",
+  "description": "Hollow Knight IPA patched with hollowknight:// URL scheme for launching from Main Menu app launcher",
+  "iconURL": "https://raw.githubusercontent.com/Elderflowa/HollowPatch/main/icon.png",
+  "tintColor": "#E8A838",
+  "website": "https://github.com/Elderflowa/HollowPatch",
+  "apps": [
+    {
+      "name": "Hollow Knight",
+      "bundleIdentifier": "dev.elder.hollowknight",
+      "developerName": "Elderflowa",
+      "subtitle": "Patched with hollowknight:// URL scheme",
+      "localizedDescription": "Hollow Knight with custom URL scheme for Main Menu launcher integration",
+      "iconURL": "https://raw.githubusercontent.com/Elderflowa/HollowPatch/main/icon.png",
+      "tintColor": "#E8A838",
+      "category": "games",
+      "versions": [
+        {
+          "version": "1.5.78",
+          "date": "2026-11-24",
+          "localizedDescription": "Added hollowknight:// URL scheme for Main Menu launcher",
+          "downloadURL": "https://github.com/Elderflowa/HollowPatch/releases/download/v1.5.78/HollowKnight.ipa",
+          "size": 1082557763,
+          "minOSVersion": "13.0",
+          "maxOSVersion": "18.0"
+        }
+      ]
+    }
+  ]
+}
