@@ -3,7 +3,6 @@
   "identifier": "dev.elder.hollowpatch",
   "subtitle": "Hollow Knight with URL scheme for Main Menu",
   "description": "Hollow Knight IPA patched with hollowknight:// URL scheme for launching from Main Menu app launcher",
-  "iconURL": "https://raw.githubusercontent.com/Elderflowa/HollowPatch/master/icon.png",
   "tintColor": "#E8A838",
   "website": "https://github.com/Elderflowa/HollowPatch",
   "apps": [
@@ -13,7 +12,6 @@
       "developerName": "Elderflowa",
       "subtitle": "Patched with hollowknight:// URL scheme",
       "localizedDescription": "Hollow Knight with custom URL scheme for Main Menu launcher integration",
-      "iconURL": "https://raw.githubusercontent.com/Elderflowa/HollowPatch/master/icon.png",
       "tintColor": "#E8A838",
       "category": "games",
       "versions": [
